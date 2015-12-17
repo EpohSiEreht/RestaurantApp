@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   get '/log_in' => 'users#log_in'
   get '/profile' => 'users#profile'
+  get '/admin' => 'users#admin'
 
   post '/sessions/' => 'sessions#create'
   delete '/sessions/' => 'sessions#destroy'

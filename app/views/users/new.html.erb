@@ -1,8 +1,16 @@
 <h3> Sign Up </h3>
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit %>
+<% if current_user.email == "admin@gmail.com" %>
+  <%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label "Admin" %>
+    <%= f.radio_button(:level, 0)%>
+    <%= f.label "Employee" %>
+    <%= f.radio_button(:level, 1)%>
+    <%= f.submit %>
+  <% end %>
+<% else %>
+  <h2> You don't have administrative abilities to create a user. </h2>
 <% end %>
