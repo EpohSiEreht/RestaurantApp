@@ -1,17 +1,17 @@
 class TablesController < ApplicationController
 
+before_action :authenticate!
+
   def select
     @tables = Table.all
   end
 
   def new
-    authenticate!
     @table = Table.new
     @current_user = User.find(session[:user_id])
   end
 
   def create
-    authenticate!
     Table.create( table_params )
     redirect_to admin_path
   end

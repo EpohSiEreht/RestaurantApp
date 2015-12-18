@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def profile
+    authenticate!
     @current_user = User.find(session[:user_id])
   end
 
