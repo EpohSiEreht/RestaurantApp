@@ -1,9 +1,10 @@
-class CreateFoodItems < ActiveRecord::Migration
+class CreateFoods < ActiveRecord::Migration
   def change
-    create_table :food_items do |t|
+    create_table :foods do |t|
       t.string :name
       t.text :description
       t.integer :price
+      t.string :type
 
       t.timestamps null: false
     end
