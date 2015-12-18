@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
 
+
   def new
+    authenticate!
     @user = User.new
     @current_user = User.find(session[:user_id])
   end
 
   def create
+    authenticate!
     User.create( user_params )
     redirect_to profile_path
   end
@@ -14,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def admin
+    authenticate!
     @current_user = User.find(session[:user_id])
   end
 
