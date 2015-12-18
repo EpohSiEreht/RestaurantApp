@@ -1,0 +1,9 @@
+<h3> Choose your Table </h3>
+<% @tables.each do |table| %>
+<div class="table" id="<%= table.id %>">
+  <a href="/tables/<%= table.id %>/orders/new"> <%= table.name %> </a>
+</div>
+<% end %>
+
+
+<!-- @tables.orders.each( order.food.each ) -->
