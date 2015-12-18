@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/tables/select' => 'tables#select'
   resources :tables
 
+  resources :orders
+
+  resources :food_items
+
   post '/sessions/' => 'sessions#create'
   delete '/sessions/' => 'sessions#destroy'
 

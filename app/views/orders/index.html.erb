@@ -1,0 +1,8 @@
+<h3> Assign Food to Table </h3>
+
+<ul>
+  <% @orders.each do |order| %>
+  <li>
+    <%= order.id %> , <%= order.food_item.name %>
+  </li>
+</ul>
