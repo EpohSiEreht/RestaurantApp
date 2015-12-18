@@ -2,8 +2,5 @@
 <%= form_for @order do |f| %>
   <%= f.collection_select :table_id, Table.all, :id, :name, include_blank: true %>
   <%= f.collection_select :food_item_id, FoodItem.all, :id, :name, include_blank: true %>
-  <%= f.collection_select :food_item_id, FoodItem.all, :id, :name, include_blank: true %>
-  <%= f.collection_select :food_item_id, FoodItem.all, :id, :name, include_blank: true %>
-  <%= f.collection_select :food_item_id, FoodItem.all, :id, :name, include_blank: true %>
   <%= f.submit "Confirm Order"%>
 <% end %>
