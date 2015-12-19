@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :tables do
     member do
       resources :orders
-      get '/orders/summary' => 'orders#summary'
     end
   end
 

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # end
 
 
-  has_many :tables
-  has_many :orders, through: :tables
-  # has_many :foods, through: :orders
+  has_many :orders
+  has_many :tables, through: :orders
+  has_many :foods, through: :orders
 end

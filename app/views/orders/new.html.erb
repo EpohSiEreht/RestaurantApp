@@ -1,6 +1,5 @@
 <h3> Assign Food to Table </h3>
 <%= form_for @order do |f| %>
-  <%= f.collection_select :table_id, Table.all, :id, :name, include_blank: true %>
-  <%= f.collection_select :food_item_id, Food.all, :id, :name, include_blank: true %>
-  <%= f.submit "Confirm Order"%>
+  <%= f.collection_select :food_id, Food.all, :id, :name, include_blank: true %>
+  <%= f.submit "Add to Cart"%>
 <% end %>
