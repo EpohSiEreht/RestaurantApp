@@ -1,14 +1,14 @@
 <h3> Create New Food Items </h3>
 <% if current_user.email == "admin@gmail.com" %>
-  <%= form_for @food_item do |f| %>
+  <%= form_for @food do |f| %>
     <%= f.label "Name" %>
     <%= f.text_field :name %>
     <%= f.label "Description" %>
     <%= f.text_field :description %>
     <%= f.label "Price" %>
     <%= f.number_field :price %>
-    <%= f.label "Type" %>
-    <%= f.text_field :price, :placeholder => "Burger, Drink, etc"%>
+    <%= f.label "Category" %>
+    <%= f.text_field :category, :placeholder => "Burger, Drink, etc"%>
     <%= f.submit %>
   <% end %>
 <% else %>

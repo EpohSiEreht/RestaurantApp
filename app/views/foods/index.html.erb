@@ -1,0 +1,8 @@
+<ul>
+  <% @foods.each do |food| %>
+
+  <li>
+    <%= food.name %> , <%= food.description %>, <%= food.price %>
+  </li>
+  <% end %>
+</ul>

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :orders
 
-  resources :food_items
+  resources :foods
 
   post '/sessions/' => 'sessions#create'
   delete '/sessions/' => 'sessions#destroy'

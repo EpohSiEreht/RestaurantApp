@@ -1,0 +1,7 @@
+<h4><%= @food.name.titleize %></h4>
+<div>
+  <%= button_to "Edit", edit_food_path(@food), method: :get %>
+</div>
+<div>
+  <%= button_to "Delete", food_path(@food), method: :delete %>
+</div>
