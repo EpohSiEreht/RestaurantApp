@@ -12,8 +12,8 @@ before_action :authenticate!
   end
 
   def create
-    Table.create( table_params )
-    redirect_to admin_path
+    Table.create(table_params)
+    redirect_to tables_path
   end
 
   private

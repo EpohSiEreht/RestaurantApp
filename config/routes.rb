@@ -3,19 +3,18 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :users
-
-  get '/log_in' => 'users#log_in'
-  get '/profile' => 'users#profile'
-  get '/admin' => 'users#admin'
-
-  get '/tables/select' => 'tables#select'
-  resources :tables do
+  resources :users do
     member do
       resources :orders
     end
   end
+  get '/log_in' => 'users#log_in'
+  get '/profile' => 'users#profile'
+  get '/admin' => 'users#admin'
 
+
+  get '/tables/select' => 'tables#select'
+  resources :tables
   resources :foods
 
   post '/sessions/' => 'sessions#create'

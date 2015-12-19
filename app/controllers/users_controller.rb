@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     authenticate!
-    User.create( user_params )
+    User.create(user_params)
     redirect_to profile_path
   end
 

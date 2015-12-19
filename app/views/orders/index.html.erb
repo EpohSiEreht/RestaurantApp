@@ -1,8 +1,16 @@
 <h3> Assign Food to Table </h3>
 
+
 <ul>
   <% @orders.each do |order| %>
   <li>
-    <%= order.id %> , <%= order.food.name %>
+    <%= order.table.name %> : <%= order.food.name %></br>
+    <%= button_to "Remove", order_path(order), method: :delete%>
   </li>
+  <% end %>
 </ul>
+
+Add another order: </br>
+<form action="orders/new">
+  <input type="submit" value="Add an Order">
+</form>
