@@ -28,6 +28,11 @@ class FoodsController < ApplicationController
     redirect_to foods_path
   end
 
+  def destroy
+    Food.delete(params[:id])
+    redirect_to foods_path
+  end
+
   private
 
   def food_params

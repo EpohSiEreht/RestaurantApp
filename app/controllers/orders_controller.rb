@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def index
     @current_user = User.find(session[:user_id])
     @tables = Table.all
-    @food_items = FoodItem.all
+    @food = FoodItem.all
   end
 
   def new
@@ -13,6 +13,10 @@ class OrdersController < ApplicationController
   def create
     Order.create( order_params )
     redirect_to '/orders/summary'
+  end
+
+  def summary
+    Order.find(params[:id])
   end
 
   private

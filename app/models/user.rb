@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
 
   has_many :tables
   has_many :orders, through: :tables
+  # has_many :foods, through: :orders
 end
