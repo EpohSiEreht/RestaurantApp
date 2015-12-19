@@ -9,5 +9,11 @@
 <form action="users/<%=current_user.id%>/orders/new">
   <input type="submit" value="Create an Order">
 </form>
+<form action="users/<%=current_user.id%>/orders">
+  <input type="submit" value="See your Orders">
+</form>
+<form action="payments">
+  <input type="submit" value="Go To Payments">
+</form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 <% end %>

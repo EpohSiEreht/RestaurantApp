@@ -2,7 +2,7 @@ class TablesController < ApplicationController
 
 before_action :authenticate!
 
-  def select
+  def index
     @tables = Table.all
   end
 

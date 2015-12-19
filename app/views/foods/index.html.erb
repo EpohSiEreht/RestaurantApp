@@ -1,9 +1,25 @@
-
+<% if current_user.email == "admin@gmail.com" %>
 <ul>
   <% @foods.each do |food| %>
   <li>
     <%= food.id %>,<%= food.name %> - $<%= food.price %></br>
-    <%= food.description %>
+    <%= food.description %></br>
+    <form action="foods/<%= food.id %>/edit">
+      <input type="submit" value="Edit">
+    </form>
   </li>
   <% end %>
 </ul>
+<form action="/foods/new">
+  <input type="submit" value="Create a Food Item">
+</form>
+<% else %>
+<ul>
+  <% @foods.each do |food| %>
+  <li>
+    <%= food.id %>,<%= food.name %> - $<%= food.price %></br>
+    <%= food.description %></br>
+  </li>
+  <% end %>
+</ul>
+<% end %>

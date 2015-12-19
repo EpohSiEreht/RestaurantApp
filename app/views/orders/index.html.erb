@@ -1,12 +1,51 @@
-<h3> Assign Food to Table </h3>
+<h3> Receipt </h3>
 
 
 <ul>
-  <% @orders.each do |order| %>
+  <h5>Table A</h5>
+  <% @orders.where(@orders.table.name == "Table A").each do |order| %>
   <li>
-    <%= order.table.name %> : <%= order.food.name %></br>
+    <%= order.food.name %>: $<%= order.food.price/100.00 %></br>
+    <form action="orders/<%= order.id %>/edit">
+      <input type="submit" value="Edit">
+    </form>
     <%= button_to "Remove", order_path(order), method: :delete%>
+    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
   </li>
+  <% end %>
+  <% @orders.where(@orders.table.name == "Table A").each do |order| %>
+  Total Price:
+  $<%= @orders.sum(order.food.price/100.00) %>
+  <% end %>
+  <h5>Table B</h5>
+  <% @orders.where(@orders.table.name == "Table B").each do |order| %>
+  <li>
+    <%= order.food.name %>: $<%= order.food.price/100.00 %></br>
+    <form action="orders/<%= order.id %>/edit">
+      <input type="submit" value="Edit">
+    </form>
+    <%= button_to "Remove", order_path(order), method: :delete%>
+    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
+  </li>
+  <% end %>
+  <% @orders.where(@orders.table.name == "Table B").each do |order| %>
+  Total Price:
+  $<%= @orders.sum(order.food.price/100.00) %>
+  <% end %>
+  <h5>Table C</h5>
+  <% @orders.where(@orders.table.name == "Table C").each do |order| %>
+  <li>
+    <%= order.food.name %>: $<%= order.food.price/100.00 %></br>
+    <form action="orders/<%= order.id %>/edit">
+      <input type="submit" value="Edit">
+    </form>
+    <%= button_to "Remove", order_path(order), method: :delete%>
+    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
+  </li>
+  <% end %>
+  <% @orders.where(@orders.table.name == "Table C").each do |order| %>
+  Total Price:
+  $<%= @orders.sum(order.food.price/100.00) %>
   <% end %>
 </ul>
 
