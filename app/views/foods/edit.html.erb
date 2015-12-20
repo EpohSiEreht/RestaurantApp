@@ -1,3 +1,4 @@
+<% if current_user.email == "admin@gmail.com" %>
 <%= form_for @food do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name%>
@@ -8,4 +9,7 @@
   <%= f.label :category %>
   <%= f.text_field :category %>
   <%= f.submit 'Edit' %>
+<% end %>
+<% else %>
+<h2> You don't have administrative access. </h2>
 <% end %>

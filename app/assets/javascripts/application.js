@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+
+    $('.dropdown').children('.sub-menu').hide();
+    $('.dropdown').click(
+        function(){
+            $(this).children('.sub-menu').slideToggle(200);
+            $('#home').click(function() {
+            window.location.replace("http://localhost:3000");
+            })
+            $('#food').click(function() {
+            window.location.replace("http://localhost:3000/foods");
+            })
+        }
+    );
+});

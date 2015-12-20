@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def new
     authenticate!
     @user = User.new
-    @current_user = User.find(session[:user_id])
   end
 
   def create
@@ -14,16 +13,18 @@ class UsersController < ApplicationController
   end
 
   def log_in
+
   end
 
   def admin
     authenticate!
-    @current_user = User.find(session[:user_id])
   end
 
   def profile
     authenticate!
-    @current_user = User.find(session[:user_id])
+    if current_user.email == "admin@gmail.com"
+      redirect_to admin_path
+    end
   end
 
   private

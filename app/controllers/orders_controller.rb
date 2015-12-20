@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_action :authenticate!
+
   def index
     @orders = Order.all
     @tables = Table.all

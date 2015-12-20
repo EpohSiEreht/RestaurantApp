@@ -1,3 +1,4 @@
+<% if current_user.email == "admin@gmail.com" %>
 <h4><%= @food.name.titleize %></h4>
 <div>
   <%= button_to "Edit", edit_food_path(@food), method: :get %>
@@ -5,3 +6,6 @@
 <div>
   <%= button_to "Delete", food_path(@food), method: :delete %>
 </div>
+<% else %>
+  <h2> You don't have administrative access. </h2>
+<% end %>

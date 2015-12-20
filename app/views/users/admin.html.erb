@@ -1,6 +1,6 @@
 <% if current_user.email == "admin@gmail.com" %>
-
-<h5> Create a New Table </h5>
+<h1> <%= current_user.email %> </h1>
+<h5> Things to Do </h5>
 <form action="/users/new">
   <input type="submit" value="Create a User">
 </form>
@@ -14,7 +14,7 @@
   <input type="submit" value="Create an Order">
 </form>
 <form action="users/<%=current_user.id%>/orders">
-  <input type="submit" value="See your Orders">
+  <input type="submit" value="See all Orders">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 <% else %>

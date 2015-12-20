@@ -2,13 +2,27 @@
 <html>
 <head>
   <title>RestaurantApp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav>
+    <ul>
+    	<li class="dropdown"><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" id="menu-icon"></a>
+    		<ul class="sub-menu">
+    			<li><a id="home" href="/">Home</a></li>
+    			<li><a id="food" href="/foods">Food Menu</a></li>
+    		</ul>
+    	</li>
+      <li class="title" style="float:right;font-size:50px;padding:0 20px;">
+        Shaky Shack
+      </li>
+    </ul>
+  </nav>
+<div class="container">
+  <%= yield %>
+</div>
 </body>
 </html>
