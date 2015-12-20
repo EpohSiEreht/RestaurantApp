@@ -5,12 +5,17 @@
   <input type="submit" value="Go To Admin Page">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
-<% else %>
+<% elsif current_user.email == "worker@gmail.com" %>
 <form action="users/<%=current_user.id%>/orders/new">
   <input type="submit" value="Create an Order">
 </form>
 <form action="users/<%=current_user.id%>/orders">
   <input type="submit" value="See your Orders">
+</form>
+<%= button_to "Log-Out", sessions_path, method: :delete %>
+<% else %>
+<form action="users/<%=current_user.id%>/orders">
+  <input type="submit" value="See all Orders">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 <% end %>

@@ -1,6 +1,9 @@
 <% if current_user.email == "admin@gmail.com" %>
 
 <h5> Create a New Table </h5>
+<form action="/users/new">
+  <input type="submit" value="Create a User">
+</form>
 <form action="/tables/new">
   <input type="submit" value="Create a Table">
 </form>

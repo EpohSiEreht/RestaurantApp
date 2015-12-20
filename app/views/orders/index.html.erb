@@ -1,12 +1,12 @@
+<!-- ADMIN and USER PAGE -->
+<% if current_user.email == "admin@gmail.com" || current_user.email == "worker@gmail.com"%>
 <h3> Receipt </h3>
-
-
 <ul>
   <h5>Table A</h5>
   <% @orders.each do |order| %>
   <% if order.table.name == "Table A" %>
   <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.table.name %></br>
+    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.status %></br>
     <form action="orders/<%= order.id %>/edit">
       <input type="submit" value="Edit">
     </form>
@@ -33,7 +33,7 @@
   <% @orders.each do |order| %>
   <% if order.table.name == "Table B" %>
   <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.table.name %></br>
+    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.status %></br>
     <form action="orders/<%= order.id %>/edit">
       <input type="submit" value="Edit">
     </form>
@@ -60,7 +60,7 @@
   <% @orders.each do |order| %>
   <% if order.table.name == "Table C" %>
   <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.table.name %></br>
+    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.status %></br>
     <form action="orders/<%= order.id %>/edit">
       <input type="submit" value="Edit">
     </form>
@@ -81,61 +81,28 @@
     Total: $<%= sumA %>
   </li>
 </ul>
-<!-- <ul>
-  <h5>Table B</h5>
-  <% @orders.where(@orders.table.name == "Table B").each do |order| %>
-  <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.table.name %></br>
-    <form action="orders/<%= order.id %>/edit">
-      <input type="submit" value="Edit">
-    </form>
-    <%= button_to "Remove", order_path(order), method: :delete%>
-    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
-  </li>
-  <% end %>
-  <li>
-    <% sumB = 0 %>
-    <% @orders.where(@orders.table.name == "Table B").each do |order| %>
-      <% if order.food.price? %>
-        <% product = (order.food.price/100.00) %>
-        <% sumB += product %>
-        <% product %>
-      <% end %>
-    <% end  %>
-    Total: $<%= sumB %>
-  </li>
-</ul>
-
-
-<ul>
-  <h5>Table C</h5>
-  <% @orders.where(@orders.table.name == "Table C").each do |order| %>
-  <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.table.name %></br>
-    <form action="orders/<%= order.id %>/edit">
-      <input type="submit" value="Edit">
-    </form>
-    <%= button_to "Remove", order_path(order), method: :delete%>
-    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
-  </li>
-  <% end %>
-  <li>
-    <% sumC = 0 %>
-    <% @orders.where(@orders.table.name == "Table C").each do |order| %>
-      <% if order.food.price? %>
-        <% product = (order.food.price/100.00) %>
-        <% sumC += product %>
-        <% product %>
-      <% end %>
-    <% end  %>
-    Total: $<%= sumC %>
-  </li>
-</ul> -->
-
-
 </br>
 </br>
 Add another order: </br>
 <form action="orders/new">
   <input type="submit" value="Add an Order">
 </form>
+<%= button_to "Log-Out", sessions_path, method: :delete %>
+
+<!-- COOKS PAGE -->
+<% elsif current_user.email == "cook@gmail.com" %>
+<h3>Orders</h3>
+<ul>
+  <% @orders.each do |order| %>
+  <% if order.is_done != 0 %>
+  <li>
+    <%= order.table.name %> - <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %>
+    <form action="orders/<%= order.id %>/edit">
+      <input type="submit" value="Update">
+    </form>
+  </li>
+  <% end %>
+  <% end %>
+</ul>
+<%= button_to "Log-Out", sessions_path, method: :delete %>
+<% end %>

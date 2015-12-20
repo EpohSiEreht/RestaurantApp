@@ -6,10 +6,6 @@ class OrdersController < ApplicationController
     @foods = Food.all
   end
 
-  def cook
-    @orders = Order.all
-  end
-
   def new
     @order = Order.new
   end
@@ -42,7 +38,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:food_id, :table_id)
+    params.require(:order).permit(:food_id, :table_id, :is_done)
   end
 
 end
