@@ -1,5 +1,10 @@
 <!--  Shows Root Page -->
+<% if current_user.nil? %>
 <h1> Fake Shack </h1>
 <form action="/log_in">
   <input type="submit" value="Log-In">
 </form>
+<% else %>
+<h1> Fake Shack </h1>
+<%= button_to "Log-Out", sessions_path, method: :delete %>
+<% end %>
