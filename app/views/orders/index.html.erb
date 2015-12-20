@@ -13,10 +13,17 @@
     <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
   </li>
   <% end %>
+
+  <% sum = 0 %>
   <% @orders.where(@orders.table.name == "Table A").each do |order| %>
-  Total Price:
-  $<%= @orders.sum(order.food.price/100.00) %>
-  <% end %>
+    <% if order.food.price? %>
+      <% product = (order.food.price/100.00) %>
+      <% sum += product %>
+      <% product %>
+    <% end %>
+  <% end  %>
+  Total: $<%= sum %>
+
   <h5>Table B</h5>
   <% @orders.where(@orders.table.name == "Table B").each do |order| %>
   <li>
@@ -28,10 +35,17 @@
     <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
   </li>
   <% end %>
+
+  <% sum = 0 %>
   <% @orders.where(@orders.table.name == "Table B").each do |order| %>
-  Total Price:
-  $<%= @orders.sum(order.food.price/100.00) %>
-  <% end %>
+    <% if order.food.price? %>
+      <% product = (order.food.price/100.00) %>
+      <% sum += product %>
+      <% product %>
+    <% end %>
+  <% end  %>
+  Total: $<%= sum %>
+
   <h5>Table C</h5>
   <% @orders.where(@orders.table.name == "Table C").each do |order| %>
   <li>
@@ -43,10 +57,17 @@
     <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
   </li>
   <% end %>
+
+  <% sum = 0 %>
   <% @orders.where(@orders.table.name == "Table C").each do |order| %>
-  Total Price:
-  $<%= @orders.sum(order.food.price/100.00) %>
-  <% end %>
+    <% if order.food.price? %>
+      <% product = (order.food.price/100.00) %>
+      <% sum += product %>
+      <% product %>
+    <% end %>
+  <% end  %>
+  Total: $<%= sum %>
+
 </ul>
 
 Add another order: </br>
