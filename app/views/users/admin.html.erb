@@ -10,6 +10,12 @@
 <form action="/foods/new">
   <input type="submit" value="Create a Food Item">
 </form>
+<form action="users/<%=current_user.id%>/orders/new">
+  <input type="submit" value="Create an Order">
+</form>
+<form action="users/<%=current_user.id%>/orders">
+  <input type="submit" value="See your Orders">
+</form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 <% else %>
 <h2> "404" </h2>
