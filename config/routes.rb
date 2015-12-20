@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       resources :orders
       get '/cooks' => 'orders#cook'
+      delete '/cooks' => 'orders#cooksdestroy'
     end
   end
 

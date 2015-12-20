@@ -3,31 +3,12 @@
 
 <ul>
 
-<h5>Table A</h5>
-<% @orders.by_time.reverse.each do |order| %>
-<% if order.table.name == "Table A" %>
+<h5>ORDERS!</h5>
+<% @orders.by_time.reverse.map do |order| %>
 <li>
-  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %></br>
+  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %> - 
 </li>
-<% end %>
-<% end %>
 
-<h5>Table B</h5>
-<% @orders.by_time.reverse.each do |order| %>
-<% if order.table.name == "Table B" %>
-<li>
-  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %></br>
-</li>
-<% end %>
-<% end %>
-
-<h5>Table C</h5>
-<% @orders.by_time.reverse.each do |order| %>
-<% if order.table.name == "Table C" %>
-<li>
-  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %></br>
-</li>
-<% end %>
 <% end %>
 
 </ul>
