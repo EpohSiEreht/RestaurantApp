@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :users do
     member do
       resources :orders
+      get '/cooks' => 'orders#cook'
     end
   end
 
-  get '/cooks' => 'orders#cook'
   get '/log_in' => 'users#log_in'
   get '/profile' => 'users#profile'
   get '/admin' => 'users#admin'

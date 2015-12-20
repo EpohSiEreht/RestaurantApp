@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @tables = Table.all
+    @foods = Food.all
   end
 
   def cook

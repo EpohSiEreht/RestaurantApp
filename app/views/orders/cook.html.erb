@@ -1,8 +1,33 @@
 <h3> Cook's Page </h3>
+
+
 <ul>
-  <% @orders.each do |order| %>
-  <li>
-    <%= order.table.name %> : <%= order.food.name %></br>
-  </li>
-  <% end %>
+
+<h5>Table A</h5>
+<% @orders.by_time.reverse.each do |order| %>
+<% if order.table.name == "Table A" %>
+<li>
+  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %></br>
+</li>
+<% end %>
+<% end %>
+
+<h5>Table B</h5>
+<% @orders.by_time.reverse.each do |order| %>
+<% if order.table.name == "Table B" %>
+<li>
+  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %></br>
+</li>
+<% end %>
+<% end %>
+
+<h5>Table C</h5>
+<% @orders.by_time.reverse.each do |order| %>
+<% if order.table.name == "Table C" %>
+<li>
+  <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %></br>
+</li>
+<% end %>
+<% end %>
+
 </ul>
