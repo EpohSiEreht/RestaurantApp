@@ -1,5 +1,5 @@
 <h3> Sign Up </h3>
-<% if current_user.level == 0  || current_user.nil? %>
+
 <div class="sign-form">
 
   <%= form_for @user do |f| %>
@@ -29,12 +29,5 @@
     </div>
     <%= f.submit %>
   <% end %>
-  <% if flash[:error] %>
-    <% flash[:error].each do |error| %>
-      <p class="error" style="color:red;font-size:60px;"><%= error %></p>
-    <% end %>
-  <% end %>
+
 </div>
-<% else %>
-  <h2> You don't have administrative access. </h2>
-<% end %>
