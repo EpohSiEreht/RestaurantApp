@@ -2,6 +2,7 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.all
+    @current_user = User.find(session[:user_id])
   end
 
   def new

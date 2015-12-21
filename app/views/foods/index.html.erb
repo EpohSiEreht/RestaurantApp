@@ -1,5 +1,6 @@
 
-<% if current_user.nil? || current_user.email == "worker@gmail.com" || current_user.email == "cook@gmail.com" %>
+<% if current_user.nil? || current_user.level == 1 || current_user.level == 2 %>
+
 <ul>
   <% @foods.each do |food| %>
   <li>
