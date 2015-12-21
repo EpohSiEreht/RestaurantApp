@@ -25,7 +25,9 @@
   <input class="log-button" type="submit" value="See your Orders" style="position:relative;font-size:60px;height:100px;bottom:15%;">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete, :style => "position:absolute;font-size:60px;height:100px;width:100%;bottom: 10%;" %>
-
+<form action="/users/new" class="ability">
+  <input type="submit" value="Create a User" class="input-button">
+</form>
 </div>
 
 <% end %>
