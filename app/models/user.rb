@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   has_many :orders
   has_many :tables, through: :orders
   has_many :foods, through: :orders
-  # 
-  # validates :email, presence: true
-  # validates :password, confirmation: true
+  #
+  validates :email, presence: true
+  validates :password, confirmation: true
+  validates :level, presence: true
 end

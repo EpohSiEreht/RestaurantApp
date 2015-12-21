@@ -10,7 +10,7 @@
     <div class="row" style="display:inline-block;width:100%;text-align:center;">
       <div class="four columns">
         <%= f.label "Admin" %>
-          <div class="radio" style="margin-left:50%;">
+          <div class="radio">
               <%= f.radio_button(:level, 0)%>
           </div>
       </div>
@@ -28,6 +28,11 @@
       </div>
     </div>
     <%= f.submit %>
+  <% end %>
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+      <p class="error" style="color:red;font-size:60px;"><%= error %></p>
+    <% end %>
   <% end %>
 </div>
 <% else %>

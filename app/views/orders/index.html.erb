@@ -259,9 +259,9 @@
     <% end  %>
     <div class="total"><strong>Total : $<%= '%.2f' % [(sumA * 1.08875) * 1.00] %> </strong></div>
     <div class="tip">Suggested Tip: </br>
-      15% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.15] %></br>
-      20% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.20] %></br>
-      25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
+      15% = $<%= '%.2f' % [(sumA * 1.08875) * 0.15] %></br>
+      20% = $<%= '%.2f' % [(sumA * 1.08875) * 0.20] %></br>
+      25% = $<%= '%.2f' % [(sumA * 1.08875) * 0.25] %></br>
     </div>
   </div>
 </div>
@@ -270,7 +270,7 @@
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <% elsif current_user.level == 2 %>
-<h3>Orders</h3>
+<h3>Things to Cook</h3>
 <div class="cook-order">
 
 <ul>
@@ -278,10 +278,26 @@
   <% if order.is_done != 0 %>
   <li>
     <div class="row">
-      <div class="eight columns">
-        <%= order.table.name %> - <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %>
+      <div class="six columns">
+        <strong><%= order.table.name %> </strong></br>
+        <%= order.food.name %> </br>
+
+          <% if Time.now.strftime("%M").to_i - order.created_at.strftime("%M").to_i <= 3 %>
+          <div class="green-light">
+          <%= order.created_at.strftime("%H:%M:%S") %>
+          </div>
+          <% elsif Time.now.strftime("%M").to_i - order.created_at.strftime("%M").to_i > 3 && Time.now.strftime("%M").to_i - order.created_at.strftime("%M").to_i < 7%>
+          <div class="yellow-light">
+          <%= order.created_at.strftime("%H:%M:%S") %>
+          </div>
+          <% elsif Time.now.strftime("%M").to_i - order.created_at.strftime("%M").to_i >= 7 %>
+          <div class="red-light">
+          <%= order.created_at.strftime("%H:%M:%S") %>
+          </div>
+          <% end %>
+
       </div>
-      <div class="four columns">
+      <div class="six columns">
         <form action="orders/<%= order.id %>/edit">
           <input type="submit" value="Update Status">
         </form>
@@ -291,8 +307,9 @@
   <% end %>
   <% end %>
 </ul>
-</div>
 <div class="cook-log-out">
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 </div>
+</div>
+
 <% end %>

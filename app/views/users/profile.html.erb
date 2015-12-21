@@ -9,7 +9,10 @@
   <input type="submit" value="See your Orders">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
+</div>
 <% elsif current_user.level == 2  %>
+<h1 class="admin-title"> Cook's Page </h1>
+<div class="abilities">
 <form action="users/<%=current_user.id%>/orders">
   <input type="submit" value="See all Orders">
 </form>

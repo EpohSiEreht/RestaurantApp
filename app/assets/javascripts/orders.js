@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  var seconds = new Date().getTime() / 1000;
-
+  setTimeout(function(){
+  window.location.reload(1);
+  }, 5000);
 });

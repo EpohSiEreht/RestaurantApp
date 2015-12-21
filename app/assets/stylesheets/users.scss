@@ -23,15 +23,16 @@ h3 {
 // Admin Page
 
 .admin-title {
+  position: relative;
   text-align: center;
   font-size: 120px;
   margin: 60px 0;
 }
 
 .abilities {
-  position: absolute;
+  position: relative;
   width: 100%;
-  bottom: 12%;
+  top: 20%;
 }
 
 .abilities input {
@@ -63,5 +64,5 @@ h3 {
 }
 
 .radio {
-  margin-left:50%;
+
 }
