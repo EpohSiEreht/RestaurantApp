@@ -9,13 +9,13 @@ class UsersController < ApplicationController
   def create
     # authenticate!
     user = User.create(user_params)
-    if user.save
-      session[:user_id] = user.id
-      redirect_to profile_path
-    else
-      flash[:error] = user.errors.full_messages
-      redirect_to new_user_path
-    end
+    # if user.save
+    #   session[:user_id] = user.id
+    #   redirect_to profile_path
+    # else
+    #   flash[:error] = user.errors.full_messages
+    #   redirect_to new_user_path
+    # end
   end
 
   def log_in
