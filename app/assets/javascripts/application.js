@@ -21,13 +21,13 @@ $(document).ready(function() {
         function(){
             $(this).children('.sub-menu').slideToggle(200);
             $('#home').click(function() {
-            window.location.replace("https://flying-shoes.herokuapp.com/");
+            window.location.replace("http://localhost:3000");
             })
             $('#food').click(function() {
-            window.location.replace("https://flying-shoes.herokuapp.com/foods");
+            window.location.replace("http://localhost:3000/foods");
             })
             $('#profile').click(function() {
-            window.location.replace("https://flying-shoes.herokuapp.com/profile");
+            window.location.replace("http://localhost:3000/profile");
             })
         }
     );
