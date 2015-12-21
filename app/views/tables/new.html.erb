@@ -1,6 +1,8 @@
 
 <% if current_user.email == "admin@gmail.com" %>
 <h3> Create a Table </h3>
+
+<div class="create-table">
   <%= form_for @table do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -8,6 +10,7 @@
     <%= f.number_field :party_size %>
     <%= f.submit %>
   <% end %>
+</div>
 <% else %>
   <h2> You don't have administrative abilities to create a table. </h2>
 <% end %>

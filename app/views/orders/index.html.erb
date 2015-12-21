@@ -1,21 +1,45 @@
 <!-- ADMIN and USER PAGE -->
 <% if current_user.email == "admin@gmail.com" || current_user.email == "worker@gmail.com"%>
 <h3> Receipt </h3>
-<ul>
-  <h5>Table A</h5>
+<!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
+<!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
+<!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
+
+<div class="receipt-form">
+<h5> Table A </h5>
   <% @orders.each do |order| %>
   <% if order.table.name == "Table A" %>
-  <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.status %></br>
-    <form action="orders/<%= order.id %>/edit">
-      <input type="submit" value="Edit">
-    </form>
-    <%= button_to "Remove", order_path(order), method: :delete%>
-    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
-  </li>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= order.food.name %>
+        </td>
+        <td>
+          $<%= order.food.price/100.00 %>
+        </td>
+        <td>
+          <%= order.status %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row" id="buttons">
+    <div class="four columns">
+      <form action="orders/<%= order.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </div>
+    <div class="four columns">
+      <%= button_to "Remove", order_path(order), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+    <div class="four columns">
+      <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+  </div>
   <% end %>
   <% end %>
-  <li>
+  <div class="results">
     <% sumA = 0 %>
     <% @orders.each do |order| %>
       <% if order.table.name == "Table A" %>
@@ -24,25 +48,45 @@
         <% product %>
       <% end %>
     <% end  %>
-    Total: $<%= sumA %>
-  </li>
-</ul>
-
-<ul>
-  <h5>Table B</h5>
+    <div class="total"><strong>Total: $<%= sumA %> </strong></div>
+  </div>
+  <!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B -->
+  <!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B -->
+  <!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B -->
+<h5> Table B </h5>
   <% @orders.each do |order| %>
   <% if order.table.name == "Table B" %>
-  <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.status %></br>
-    <form action="orders/<%= order.id %>/edit">
-      <input type="submit" value="Edit">
-    </form>
-    <%= button_to "Remove", order_path(order), method: :delete%>
-    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
-  </li>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= order.food.name %>
+        </td>
+        <td>
+          $<%= order.food.price/100.00 %>
+        </td>
+        <td>
+          <%= order.status %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row" id="buttons">
+    <div class="four columns">
+      <form action="orders/<%= order.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </div>
+    <div class="four columns">
+      <%= button_to "Remove", order_path(order), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+    <div class="four columns">
+      <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+  </div>
   <% end %>
   <% end %>
-  <li>
+  <div class="results">
     <% sumA = 0 %>
     <% @orders.each do |order| %>
       <% if order.table.name == "Table B" %>
@@ -51,25 +95,45 @@
         <% product %>
       <% end %>
     <% end  %>
-    Total: $<%= sumA %>
-  </li>
-</ul>
-
-<ul>
-  <h5>Table C</h5>
+    <div class="total"><strong>Total: $<%= sumA %> </strong></div>
+  </div>
+  <!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C -->
+  <!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C -->
+  <!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C -->
+<h5> Table C </h5>
   <% @orders.each do |order| %>
   <% if order.table.name == "Table C" %>
-  <li>
-    <%= order.food.name %>: $<%= order.food.price/100.00 %> - <%= order.status %></br>
-    <form action="orders/<%= order.id %>/edit">
-      <input type="submit" value="Edit">
-    </form>
-    <%= button_to "Remove", order_path(order), method: :delete%>
-    <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}%>
-  </li>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= order.food.name %>
+        </td>
+        <td>
+          $<%= order.food.price/100.00 %>
+        </td>
+        <td>
+          <%= order.status %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row" id="buttons">
+    <div class="four columns">
+      <form action="orders/<%= order.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </div>
+    <div class="four columns">
+      <%= button_to "Remove", order_path(order), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+    <div class="four columns">
+      <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+  </div>
   <% end %>
   <% end %>
-  <li>
+  <div class="results">
     <% sumA = 0 %>
     <% @orders.each do |order| %>
       <% if order.table.name == "Table C" %>
@@ -78,18 +142,12 @@
         <% product %>
       <% end %>
     <% end  %>
-    Total: $<%= sumA %>
-  </li>
-</ul>
-</br>
-</br>
-Add another order: </br>
-<form action="orders/new">
-  <input type="submit" value="Add an Order">
-</form>
-<%= button_to "Log-Out", sessions_path, method: :delete %>
-
-<!-- COOKS PAGE -->
+    <div class="total"><strong>Total: $<%= sumA %> </strong></div>
+  </div>
+</div>
+<!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
+<!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
+<!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <% elsif current_user.email == "cook@gmail.com" %>
 <h3>Orders</h3>
 <ul>

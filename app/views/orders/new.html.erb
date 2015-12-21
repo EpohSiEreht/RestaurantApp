@@ -1,7 +1,8 @@
 <h3> Add an Order </h3>
-
+<div class="create-order">
 <%= form_for @order do |f| %>
   <%= f.collection_select(:table_id, Table.all, :id, :name) %>
   <%= f.collection_select(:food_id, Food.all, :id, :name) %>
   <%= f.submit "Submit to Cart"%>
 <% end %>
+</div>

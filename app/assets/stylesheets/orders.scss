@@ -1,3 +1,54 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Create Order Page
+.create-order {
+  position: relative;
+  text-align: center;
+  top: 12%;
+  width: 100%;
+  font-size: 50px;
+}
+
+.create-order input, select{
+  display:block;
+  width:100%;
+  height:120px;
+  font-size: 60px;
+  border-radius: 25px;
+}
+
+// Receipt Page
+
+h5 {
+  font-size: 70px;
+  color: darkred;
+}
+.receipt-form {
+  position: relative;
+  top: 8%;
+  width: 100%;
+  font-size: 45px;
+}
+
+.receipt-form input {
+  font-size:30px;
+  height:100px;
+  width:100%;
+  margin:0;
+}
+
+td {
+  border-bottom: 2px solid black;
+}
+#buttons {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.total {
+  text-align: right;
+}

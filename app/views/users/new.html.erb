@@ -1,18 +1,35 @@
 <h3> Sign Up </h3>
 <% if current_user.email == "admin@gmail.com" %>
+<div class="sign-form">
+
   <%= form_for @user do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.label "Admin" %>
-    <%= f.radio_button(:level, 0)%>
-    <%= f.label "Employee" %>
-    <%= f.radio_button(:level, 1)%>
-    <%= f.label "Cook" %>
-    <%= f.radio_button(:level, 2)%>
+    <div class="row" style="display:inline-block;width:100%;text-align:center;">
+      <div class="four columns">
+        <%= f.label "Admin" %>
+          <div class="radio" style="margin-left:50%;">
+              <%= f.radio_button(:level, 0)%>
+          </div>
+      </div>
+      <div class="four columns">
+        <%= f.label "Employee" %>
+        <div class="radio">
+            <%= f.radio_button(:level, 1)%>
+        </div>
+      </div>
+      <div class="four columns">
+        <%= f.label "Cook" %>
+        <div class="radio">
+            <%= f.radio_button(:level, 2)%>
+        </div>
+      </div>
+    </div>
     <%= f.submit %>
   <% end %>
+</div>
 <% else %>
   <h2> You don't have administrative abilities to create a user. </h2>
 <% end %>
