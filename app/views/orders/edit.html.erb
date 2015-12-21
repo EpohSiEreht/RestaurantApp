@@ -8,9 +8,20 @@
 <% end %>
 </div>
 <% elsif current_user.email == "cook@gmail.com" %>
-  <%= @order.table.name %> - <%= @order.food.name %> <%= @order.created_at.strftime("%H:%M:%S") %>
-  <%= form_for @order do |f| %>
-    <%= f.radio_button(:is_done, 0) %>
-    <%= f.submit "Complete"%>
-  <% end %>
+<div class="update-order">
+  <div class="order-detail">
+
+    <strong><%= @order.table.name %> </strong></br>
+    <i> <%= @order.food.name %> </i></br>
+    <%= @order.created_at.strftime("%H:%M:%S") %>
+
+  </div>
+  <div class="complete">
+    <%= form_for @order do |f| %>
+      <%= f.radio_button(:is_done, 0) %>
+      <%= f.submit "Complete"%>
+    <% end %>
+  </div>
 <% end %>
+
+</div>

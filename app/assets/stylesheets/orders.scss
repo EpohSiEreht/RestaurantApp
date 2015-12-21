@@ -67,3 +67,75 @@ td {
 .total , .tip {
   text-align: right;
 }
+
+// COOK'S PAGE
+.cook-order {
+  position: relative;
+  text-align: center;
+  top: 12%;
+  width: 100%;
+  font-size: 40px;
+}
+
+.cook-order li {
+  list-style-type: none;
+}
+
+.cook-order input, select{
+  display:block;
+  width:100%;
+  height:50px;
+  font-size: 20px;
+  border-radius: 25px;
+  margin-top: 12%;
+}
+
+.cook-log-out input {
+  position: absolute;
+  display:block;
+  width:100%;
+  height:120px;
+  font-size: 60px;
+  border-radius: 25px;
+  bottom: 12%;
+}
+
+// COOK'S UPDATE ORDER PAGE
+.update-order {
+  position: relative;
+  text-align: center;
+  top: 12%;
+  width: 100%;
+  font-size: 40px;
+}
+
+.update-order input, select{
+  display:block;
+  width:100%;
+  height:50px;
+  font-size: 20px;
+  border-radius: 25px;
+  margin-top: 12%;
+}
+
+.order-detail {
+  font-size: 100px;
+}
+
+.complete {
+  width: 100%;
+}
+
+.complete input {
+  position: relative;
+  display: block;
+  height: 400px;
+  font-size: 130px;
+  bottom: 200px;
+}
+
+input[type='radio'] {
+    -webkit-appearance: checkbox;
+    margin:30px 0;
+
+}

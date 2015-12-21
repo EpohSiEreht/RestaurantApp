@@ -166,17 +166,28 @@
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <% elsif current_user.email == "cook@gmail.com" %>
 <h3>Orders</h3>
+<div class="cook-order">
+
 <ul>
   <% @orders.each do |order| %>
   <% if order.is_done != 0 %>
   <li>
-    <%= order.table.name %> - <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %>
-    <form action="orders/<%= order.id %>/edit">
-      <input type="submit" value="Update">
-    </form>
+    <div class="row">
+      <div class="eight columns">
+        <%= order.table.name %> - <%= order.food.name %> <%= order.created_at.strftime("%H:%M:%S") %>
+      </div>
+      <div class="four columns">
+        <form action="orders/<%= order.id %>/edit">
+          <input type="submit" value="Update Status">
+        </form>
+      </div>
+    </div>
   </li>
   <% end %>
   <% end %>
 </ul>
+</div>
+<div class="cook-log-out">
 <%= button_to "Log-Out", sessions_path, method: :delete %>
+</div>
 <% end %>

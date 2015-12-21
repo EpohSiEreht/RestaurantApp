@@ -19,13 +19,13 @@ $(document).ready(function() {
         function(){
             $(this).children('.sub-menu').slideToggle(200);
             $('#home').click(function() {
-            window.location.replace("http://localhost:3000");
+            window.location.replace("/");
             })
             $('#food').click(function() {
-            window.location.replace("http://localhost:3000/foods");
+            window.location.replace("/foods");
             })
             $('#profile').click(function() {
-            window.location.replace("http://localhost:3000/profile");
+            window.location.replace("/profile");
             })
         }
     );
