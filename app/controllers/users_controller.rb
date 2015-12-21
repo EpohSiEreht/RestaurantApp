@@ -2,12 +2,12 @@ class UsersController < ApplicationController
 
 
   def new
-
+    authenticate!
     @user = User.new
   end
 
   def create
-    
+    authenticate!
     user = User.create(user_params)
     if user.save
       session[:user_id] = user.id
