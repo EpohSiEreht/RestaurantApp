@@ -1,5 +1,5 @@
 <!--  Shows Root Page -->
-<!-- <% if current_user.nil? %> -->
+<% if current_user.nil? %>
 
 
   <div class="logo-box">
@@ -9,12 +9,14 @@
   <form action="/log_in" class="log_in_form">
     <input class="log-button" type="submit" value="Log-In" style="font-size:60px;height:100px;">
   </form>
+  <form action="/users/new" class="ability">
+    <input type="submit" value="Create a User" class="input-button">
+  </form>
+
+<% end %>
 
 
-<!-- <% else %> -->
-
-
-
+<!-- 
 <div class="logo-box">
   <img src="/images/Fake-Shack_Logo.png"/>
 </div>
@@ -28,6 +30,6 @@
 <form action="/users/new" class="ability">
   <input type="submit" value="Create a User" class="input-button">
 </form>
-</div>
+</div> -->
 
 <!-- <% end %> -->
