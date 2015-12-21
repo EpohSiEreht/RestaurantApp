@@ -26,6 +26,9 @@ $(document).ready(function() {
             $('#food').click(function() {
             window.location.replace("http://localhost:3000/foods");
             })
+            $('#profile').click(function() {
+            window.location.replace("http://localhost:3000/profile");
+            })
         }
     );
 });
