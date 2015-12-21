@@ -1,4 +1,6 @@
 <% if current_user.email == "admin@gmail.com" %>
+<h3 style="font-size:110px;top:5%;"> Edit Food Item</h3>
+<div class="edit-food">
 <%= form_for @food do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name%>
@@ -10,6 +12,7 @@
   <%= f.text_field :category %>
   <%= f.submit 'Edit' %>
 <% end %>
+</div>
 <% else %>
 <h2> You don't have administrative access. </h2>
 <% end %>

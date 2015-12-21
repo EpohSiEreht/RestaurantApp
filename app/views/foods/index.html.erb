@@ -3,24 +3,46 @@
 <ul>
   <% @foods.each do |food| %>
   <li>
-    <%= food.id %>,<%= food.name %> - $<%= food.price %></br>
+    <%= food.name %> - $<%= food.price %></br>
     <%= food.description %></br>
   </li>
   <% end %>
 </ul>
 <% elsif current_user.email == "admin@gmail.com" %>
-<ul>
-  <% @foods.each do |food| %>
-  <li>
-    <%= food.id %>,<%= food.name %> - $<%= food.price %></br>
-    <%= food.description %></br>
-    <form action="foods/<%= food.id %>/edit">
-      <input type="submit" value="Edit">
-    </form>
-  </li>
+<h3 class="menu" style="font-size:90px;"> Shaky Shack Menu </h3>
+
+<div class="food">
+  <h5> Burgers </h5>
+  <ul>
+    <% @foods.each do |food| %>
+    <% if food.category == "Burger" %>
+    <li>
+      <strong><%= food.name %> - $<%= food.price/100.00 %></strong></br>
+      <%= food.description %></br>
+      <form action="foods/<%= food.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+
+  <h5> Drinks </h5>
+  <ul>
+    <% @foods.each do |food| %>
+    <% if food.category == "Drink" %>
+    <li>
+      <strong><%= food.name %> - $<%= food.price/100.00 %></strong></br>
+      <%= food.description %></br>
+      <form action="foods/<%= food.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<form action="/foods/new">
-  <input type="submit" value="Create a Food Item">
-</form>
-<% end %>
+  <form action="/foods/new">
+    <input type="submit" value="Create a Food Item">
+  </form>
+</div>
