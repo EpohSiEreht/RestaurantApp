@@ -160,7 +160,112 @@
       25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
     </div>
   </div>
+  <!-- TABLE D --><!-- TABLE D --><!-- TABLE D --><!-- TABLE D --><!-- TABLE D -->
+  <!-- TABLE D --><!-- TABLE D --><!-- TABLE D --><!-- TABLE D --><!-- TABLE D -->
+  <!-- TABLE D --><!-- TABLE D --><!-- TABLE D --><!-- TABLE D --><!-- TABLE D -->
+<h5> Table D </h5>
+  <% @orders.each do |order| %>
+  <% if order.table.name == "Table D" %>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= order.food.name %>
+        </td>
+        <td>
+          $<%= order.food.price/100.00 %>
+        </td>
+        <td>
+          <%= order.status %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row" id="buttons">
+    <div class="four columns">
+      <form action="orders/<%= order.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </div>
+    <div class="four columns">
+      <%= button_to "Remove", order_path(order), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+    <div class="four columns">
+      <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <div class="results">
+    <% sumA = 0 %>
+    <% @orders.each do |order| %>
+      <% if order.table.name == "Table D" %>
+        <% product = (order.food.price/100.00) %>
+        <% sumA += product %>
+        <% product %>
+      <% end %>
+    <% end  %>
+    <div class="total"><strong>Total : $<%= '%.2f' % [(sumA * 1.08875) * 1.00] %> </strong></div>
+    <div class="tip">Suggested Tip: </br>
+      15% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.15] %></br>
+      20% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.20] %></br>
+      25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
+    </div>
+  </div>
+  <!-- TABLE E --><!-- TABLE E --><!-- TABLE E --><!-- TABLE E --><!-- TABLE E -->
+  <!-- TABLE E --><!-- TABLE E --><!-- TABLE E --><!-- TABLE E --><!-- TABLE E -->
+  <!-- TABLE E --><!-- TABLE E --><!-- TABLE E --><!-- TABLE E --><!-- TABLE E -->
+<h5> Table E </h5>
+  <% @orders.each do |order| %>
+  <% if order.table.name == "Table E" %>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= order.food.name %>
+        </td>
+        <td>
+          $<%= order.food.price/100.00 %>
+        </td>
+        <td>
+          <%= order.status %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="row" id="buttons">
+    <div class="four columns">
+      <form action="orders/<%= order.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </div>
+    <div class="four columns">
+      <%= button_to "Remove", order_path(order), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+    <div class="four columns">
+      <%= button_to "Pay", order_path(order), method: :delete, data: {confirm: "Are you sure?"}, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <div class="results">
+    <% sumA = 0 %>
+    <% @orders.each do |order| %>
+      <% if order.table.name == "Table E" %>
+        <% product = (order.food.price/100.00) %>
+        <% sumA += product %>
+        <% product %>
+      <% end %>
+    <% end  %>
+    <div class="total"><strong>Total : $<%= '%.2f' % [(sumA * 1.08875) * 1.00] %> </strong></div>
+    <div class="tip">Suggested Tip: </br>
+      15% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.15] %></br>
+      20% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.20] %></br>
+      25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
+    </div>
+  </div>
 </div>
+
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->

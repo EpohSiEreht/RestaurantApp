@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
   #   self.password_digest = Password.create(new_password)
   # end
 
-
   has_many :orders
   has_many :tables, through: :orders
   has_many :foods, through: :orders
+  # 
+  # validates :email, presence: true
+  # validates :password, confirmation: true
 end

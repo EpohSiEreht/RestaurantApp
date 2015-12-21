@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def log_in
-
   end
 
   def admin
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
 
   def profile
     authenticate!
-    if current_user.email == "admin@gmail.com"
+    if current_user.level == 0
       redirect_to admin_path
     end
   end
