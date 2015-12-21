@@ -19,10 +19,13 @@
   <img src="/images/Fake-Shack_Logo.png"/>
 </div>
 <p class="motto"> Welcome to Shaky Shack! The Shack that LITERALLY SHAKES!!!!</p>
-<form action="users/<%=current_user.id%>/orders" class="log_in_form">
-  <input class="log-button" type="submit" value="See your Orders" style="font-size:60px;height:100px;">
-</form>
-<%= button_to "Log-Out", sessions_path, method: :delete, :style => "font-size:60px;height:100px;width:100%;margin-top:150px;" %>
+<div class="home-button">
 
+<form action="users/<%=current_user.id%>/orders" class="log_in_form">
+  <input class="log-button" type="submit" value="See your Orders" style="position:relative;font-size:60px;height:100px;bottom:15%;">
+  <%= button_to "Log-Out", sessions_path, method: :delete, :style => "position:relative;font-size:60px;height:100px;width:100%;bottom: 10%;" %>
+</form>
+
+</div>
 
 <% end %>
