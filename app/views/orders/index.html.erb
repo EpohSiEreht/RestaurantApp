@@ -1,5 +1,6 @@
 <!-- ADMIN and USER PAGE -->
 <% if current_user.level == 0 || current_user.level == 1 %>
+<%= javascript_include_tag 'orders' %>
 <h3> Receipt </h3>
 <!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
 <!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
@@ -270,6 +271,7 @@
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <% elsif current_user.level == 2 %>
+<%= javascript_include_tag 'orders' %>
 <h3>Things to Cook</h3>
 <div class="cook-order">
 
