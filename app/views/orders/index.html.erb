@@ -1,5 +1,5 @@
 <!-- ADMIN and USER PAGE -->
-<% if current_user.email == "admin@gmail.com" || current_user.email == "worker@gmail.com"%>
+<% if current_user.level == 0 || current_user.level == 1 %>
 <h3> Receipt </h3>
 <!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
 <!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A --><!-- TABLE A -->
@@ -164,7 +164,7 @@
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->
-<% elsif current_user.email == "cook@gmail.com" %>
+<% elsif current_user.level == 2 %>
 <h3>Orders</h3>
 <div class="cook-order">
 

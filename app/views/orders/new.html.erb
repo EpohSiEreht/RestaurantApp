@@ -1,4 +1,6 @@
 <h3> Add an Order </h3>
+
+<% if current_user.level == 0 || current_user.level == 1 %>
 <div class="create-order">
 <%= form_for @order do |f| %>
   <%= f.collection_select(:table_id, Table.all, :id, :name) %>
@@ -6,3 +8,4 @@
   <%= f.submit "Submit to Cart"%>
 <% end %>
 </div>
+<% end %>

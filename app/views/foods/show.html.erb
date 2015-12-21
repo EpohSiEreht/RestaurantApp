@@ -1,4 +1,4 @@
-<% if current_user.email == "admin@gmail.com" %>
+<% if current_user.level == 0  %>
 <h4><%= @food.name.titleize %></h4>
 <div>
   <%= button_to "Edit", edit_food_path(@food), method: :get %>

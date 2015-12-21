@@ -1,9 +1,10 @@
 <h3> Choose your Table </h3>
+<% if current_user.level == 0 %>
 <% @tables.each do |table| %>
 <div class="table" id="<%= table.id %>">
   <a href="/users/<%= current_user.id %>/orders/new"> <%= table.name %> </a>
 </div>
+<% else %>
+  <h2> You don't have administrative access. </h2>
 <% end %>
-
-
 <!-- @tables.orders.each( order.food.each ) -->

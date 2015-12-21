@@ -1,4 +1,4 @@
-<% if current_user.email == "admin@gmail.com" %>
+<% if current_user.level == 0  %>
 <h3 style="font-size:110px;top:5%;"> Edit Food Item</h3>
 <div class="edit-food">
 <%= form_for @food do |f| %>

@@ -1,5 +1,5 @@
 <h3 style="font-size:110px;top:5%;"> New Food Item </h3>
-<% if current_user.email == "admin@gmail.com" %>
+<% if current_user.level == 0  %>
 
 <div class="create-food">
   <%= form_for @food do |f| %>

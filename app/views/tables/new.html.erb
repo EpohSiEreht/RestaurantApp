@@ -1,5 +1,5 @@
 
-<% if current_user.email == "admin@gmail.com" %>
+<% if current_user.level == 0 %>
 <h3> Create a Table </h3>
 
 <div class="create-table">
@@ -12,5 +12,5 @@
   <% end %>
 </div>
 <% else %>
-  <h2> You don't have administrative abilities to create a table. </h2>
+  <h2> You don't have administrative access. </h2>
 <% end %>

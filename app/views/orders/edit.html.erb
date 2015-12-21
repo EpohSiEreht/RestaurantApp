@@ -1,4 +1,4 @@
-<% if current_user.email == "admin@gmail.com" || current_user.email == "worker@gmail.com"%>
+<% if current_user.level == 0  || current_user.level == 1 %>
 <h3> Edit Order </h3>
 <div class="edit-order">
 <%= form_for @order do |f| %>
@@ -7,7 +7,7 @@
   <%= f.submit "Update"%>
 <% end %>
 </div>
-<% elsif current_user.email == "cook@gmail.com" %>
+<% elsif current_user.level == 2  %>
 <div class="update-order">
   <div class="order-detail">
 

@@ -1,5 +1,5 @@
 <h3> Sign Up </h3>
-<% if current_user.email == "admin@gmail.com" %>
+<% if current_user.level == 0  %>
 <div class="sign-form">
 
   <%= form_for @user do |f| %>
@@ -31,5 +31,5 @@
   <% end %>
 </div>
 <% else %>
-  <h2> You don't have administrative abilities to create a user. </h2>
+  <h2> You don't have administrative access. </h2>
 <% end %>
