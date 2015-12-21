@@ -48,8 +48,14 @@
         <% product %>
       <% end %>
     <% end  %>
-    <div class="total"><strong>Total: $<%= sumA %> </strong></div>
+    <div class="total"><strong>Total : $<%= '%.2f' % [(sumA * 1.08875) * 1.00] %> </strong></div>
+    <div class="tip">Suggested Tip: </br>
+      15% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.15] %></br>
+      20% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.20] %></br>
+      25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
+    </div>
   </div>
+
   <!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B -->
   <!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B -->
   <!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B --><!-- TABLE B -->
@@ -95,7 +101,12 @@
         <% product %>
       <% end %>
     <% end  %>
-    <div class="total"><strong>Total: $<%= sumA %> </strong></div>
+    <div class="total"><strong>Total : $<%= '%.2f' % [(sumA * 1.08875) * 1.00] %> </strong></div>
+    <div class="tip">Suggested Tip: </br>
+      15% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.15] %></br>
+      20% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.20] %></br>
+      25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
+    </div>
   </div>
   <!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C -->
   <!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C --><!-- TABLE C -->
@@ -142,7 +153,12 @@
         <% product %>
       <% end %>
     <% end  %>
-    <div class="total"><strong>Total: $<%= sumA %> </strong></div>
+    <div class="total"><strong>Total : $<%= '%.2f' % [(sumA * 1.08875) * 1.00] %> </strong></div>
+    <div class="tip">Suggested Tip: </br>
+      15% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.15] %></br>
+      20% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.20] %></br>
+      25% = $<%= '%.2f' % [(sumA * 1.08875) * 1.00 * 0.25] %></br>
+    </div>
   </div>
 </div>
 <!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE --><!-- COOKS PAGE -->

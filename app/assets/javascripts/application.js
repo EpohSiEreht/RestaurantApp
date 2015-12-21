@@ -15,8 +15,6 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function() {
-
-    $('.dropdown').children('.sub-menu').hide();
     $('.dropdown').click(
         function(){
             $(this).children('.sub-menu').slideToggle(200);
