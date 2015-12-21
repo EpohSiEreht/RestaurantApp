@@ -1,5 +1,5 @@
 <h3> Sign Up </h3>
-<% if current_user.level == 0  %>
+<!-- <% if current_user.level == 0  %> -->
 <div class="sign-form">
 
   <%= form_for @user do |f| %>
@@ -35,6 +35,6 @@
     <% end %>
   <% end %>
 </div>
-<% else %>
+<!-- <% else %> -->
   <h2> You don't have administrative access. </h2>
-<% end %>
+<!-- <% end %> -->

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 
   def new
-    authenticate!
+    # authenticate!
     @user = User.new
   end
 
