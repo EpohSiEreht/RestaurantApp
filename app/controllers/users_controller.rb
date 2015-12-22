@@ -26,8 +26,9 @@ class UsersController < ApplicationController
   end
 
   def profile
-    authenticate!
-    if current_user.level == 0
+    if current_user.nil?
+      authenticate!
+    elsif current_user.level == 0
       redirect_to admin_path
     end
   end
