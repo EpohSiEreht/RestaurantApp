@@ -10,6 +10,11 @@
     <%= f.number_field :party_size %>
     <%= f.submit %>
   <% end %>
+  <% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+      <p class="error" style="color:red;font-size:60px;"><%= error %></p>
+    <% end %>
+  <% end %>
 </div>
 <% else %>
   <h2> You don't have administrative access. </h2>

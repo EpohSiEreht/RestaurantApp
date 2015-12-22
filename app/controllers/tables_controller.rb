@@ -12,8 +12,14 @@ before_action :authenticate!
   end
 
   def create
-    Table.create(table_params)
-    redirect_to tables_path
+    table = Table.create(table_params)
+    if table.save
+      session[:user_id] = user.id
+      redirect_to tables_path
+    else
+      flash[:error] = table.errors.full_messages
+      redirect_to new_table_path
+    end
   end
 
   private

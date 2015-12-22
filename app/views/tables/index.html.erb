@@ -1,8 +1,14 @@
-<h3> Choose your Table </h3>
 <% if current_user.level == 0 %>
-<% @tables.each do |table| %>
-<div class="table" id="<%= table.id %>">
-  <a href="/users/<%= current_user.id %>/orders/new"> <%= table.name %> </a>
+<h3 style="font-size:120px;"> Your Tables </h3>
+
+<div class="table">
+<ol>
+  <% @tables.each do |table| %>
+  <li>
+      <%= table.name %>
+  </li>
+  <% end %>
+</ol>
 </div>
 <% else %>
   <h2> You don't have administrative access. </h2>
