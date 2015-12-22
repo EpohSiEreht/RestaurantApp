@@ -1,28 +1,21 @@
-== README
+<strong><h1>Shaky Shack Restaurant App!</h1></strong></br>
+</br>
+Link: https://flying-shoes.herokuapp.com </br>
+</br>
+<h2>This is a simple restaurant app aimed at making restaurant employee's lives easier.
+As an admin, you'll be able to add tables, food items, employees, and orders while the servers and chefs can stick with the core functionality of the app. Plus, the app is very easy to use and has a quick learning curve!</h2></br>
+![alt text-1](/public/images/Sample1.png)
+![alt text-2](/public/images/Sample2.png)
+![alt text-3](/public/images/Sample3.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+</br>
+</br>
+Technologies Used:</br>
+<li>HTML5</li>
+<li>CSS3</li>
+<li>JavaScript with jQuery</li>
+<li>Sinatra/ActiveRecord</li>
+<li>Ruby/Rails</li>
+<li>Skeleton Framework</li>
+<li>SQL/Database</li>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
