@@ -13,6 +13,7 @@ before_action :authenticate!
 
   def create
     table = Table.create(table_params)
+    user = User.find(session[:user_id])
     if table.save
       session[:user_id] = user.id
       redirect_to tables_path
