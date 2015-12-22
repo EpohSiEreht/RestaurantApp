@@ -5,7 +5,14 @@
 <ol>
   <% @tables.each do |table| %>
   <li>
-      <%= table.name %> <%= button_to "Delete", table_path(table), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
+    <div class="row">
+      <div class="six columns">
+        <%= table.name %>
+      </div>
+      <div class="six columns">
+        <%= button_to "Delete", table_path(table), method: :delete, :style => "font-size:30px;height:100px;width:70%;margin:0;"%>
+      </div>
+    </div>
   </li>
   <% end %>
 </ol>
