@@ -5,7 +5,7 @@ Link: https://flying-shoes.herokuapp.com </br>
 <h2>This is a simple restaurant app aimed at making restaurant employee's lives easier.
 As an admin, you'll be able to add tables, food items, employees, and orders while the servers and chefs can stick with the core functionality of the app. Plus, the app is very easy to use and has a quick learning curve!</h2></br>
 ![alt text](/public/images/Sample1.png)
-Here's a couple of more screenshots!
+<h2>Here's a couple of more screenshots! </h2></br>
 ![alt text-1](/public/images/Sample2.png)
 ![alt text-2](/public/images/Sample3.png)
 
