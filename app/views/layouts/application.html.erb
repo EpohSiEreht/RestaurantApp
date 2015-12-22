@@ -29,15 +29,19 @@
             <% end %>
           </li>
           </a>
-          <a id="profile" href="/users/<%=current_user.id%>/orders">
+          <% if current_user.nil? %>
+            <%=  %>
+            <% else %>
+            <a id="profile" href="/users/<%=current_user.id%>/orders">
           <li>
             <% if current_user.nil? %>
             <%=  %>
-            <% elsif current_user.level == 0 || current_user.level == 0 %>
+            <% elsif current_user.level == 0 || current_user.level == 1 %>
             Your Orders
             <% end %>
           </li>
           </a>
+            <% end %>
     		</ul>
     	</li>
       <li class="title" style="float:right;font-size:50px;padding:0 20px;">
