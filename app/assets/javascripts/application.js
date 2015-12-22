@@ -29,8 +29,18 @@ $(document).ready(function() {
             })
         }
     );
+
+    var dollar = "$";
+
     $('.currency').click(function(){
+      if(dollar == "$") {
       $('<i>€ </i>').replaceAll("b");
+      dollar = "€";
+      }
+      else if(dollar == "€") {
+        $('<b>$</b>').replaceAll("i");
+        dollar = "$";
+      }
     });
 });
 
