@@ -3,11 +3,11 @@
 
 
   <div class="logo-box">
-    <img src="/images/Fake-Shack_Logo.png"/>
+    <img src="/images/Fake-Shack_Logo.png" style="width:100%;"/>
   </div>
-  <p class="motto"> Welcome to Shaky Shack! The Shack that LITERALLY SHAKES!!!!</p>
+  <p class="motto"> Welcome to Shaky Shack! We sell burgers that LITERALLY SHAKES in your HANDS!!!!</p>
   <form action="/log_in" class="log_in_form">
-    <input class="log-button" type="submit" value="Log-In" style="font-size:60px;height:100px;">
+    <input class="log-button" type="submit" value="Log-In" style="position:relative;font-size:50px;height:100px;width:100%;bottom: 10%;">
   </form>
 
 <% else %>
@@ -15,16 +15,14 @@
 
 
 <div class="logo-box">
-  <img src="/images/Fake-Shack_Logo.png"/>
+  <img src="/images/Fake-Shack_Logo.png" style="width:100%;"/>
 </div>
-<p class="motto"> Welcome to Shaky Shack! The Shack that LITERALLY SHAKES!!!!</p>
+<p class="motto"> Welcome to Shaky Shack! We sell burgers that LITERALLY SHAKES in your HANDS!!!!</p>
 <div class="home-button">
-
-<form action="users/<%=current_user.id%>/orders" class="log_in_form">
-  <input class="log-button" type="submit" value="See your Orders" style="position:relative;font-size:60px;height:100px;bottom:15%;">
-</form>
-<%= button_to "Log-Out", sessions_path, method: :delete, :style => "position:absolute;font-size:60px;height:100px;width:100%;bottom: 10%;" %>
-
+  <form action="users/<%=current_user.id%>/orders" class="log_in_form">
+    <input class="log-button" type="submit" value="See your Orders" style="position:relative;font-size:50px;height:100px;width:100%;bottom: 10%;">
+  </form>
+  <%= button_to "Log-Out", sessions_path, method: :delete, :style => "position:relative;font-size:50px;height:100px;width:100%;bottom: 10%;" %>
 </div>
 
 <% end %>
