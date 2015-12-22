@@ -22,6 +22,11 @@ before_action :authenticate!
     end
   end
 
+  def destroy
+    Table.delete(params[:id])
+    redirect_to tables_path
+  end
+
   private
 
   def table_params

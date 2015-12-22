@@ -5,7 +5,7 @@
 <ol>
   <% @tables.each do |table| %>
   <li>
-      <%= table.name %>
+      <%= table.name %> <%= button_to "Delete", table_path(table), method: :delete, :style => "font-size:30px;height:100px;width:100%;margin:0;"%>
   </li>
   <% end %>
 </ol>
