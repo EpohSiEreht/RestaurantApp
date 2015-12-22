@@ -9,7 +9,7 @@
     <% @foods.each do |food| %>
     <% if food.category == "Burger" %>
     <li>
-      <strong><%= food.name %> - $<%= food.price/100.00 %></strong></br>
+      <strong><%= food.name %> - <b>$</b><%= food.price/100.00 %></strong></br>
       <p><%= food.description %></p></br>
 
     </li>
@@ -22,7 +22,7 @@
     <% @foods.each do |food| %>
     <% if food.category == "Drink" %>
     <li>
-      <strong><%= food.name %> - $<%= food.price/100.00 %></strong></br>
+      <strong><%= food.name %> - <b>$</b><%= food.price/100.00 %></strong></br>
       <p><%= food.description %></p></br>
 
     </li>
@@ -40,7 +40,7 @@
     <% @foods.each do |food| %>
     <% if food.category == "Burger" %>
     <li>
-      <strong><%= food.name %> - $<%= food.price/100.00 %></strong></br>
+      <strong><%= food.name %> - <b>$</b><%= food.price/100.00 %></strong></br>
       <p><%= food.description %></p></br>
       <form action="foods/<%= food.id %>/edit">
         <input type="submit" value="Edit">
@@ -55,7 +55,7 @@
     <% @foods.each do |food| %>
     <% if food.category == "Drink" %>
     <li>
-      <strong><%= food.name %> - $<%= food.price/100.00 %></strong></br>
+      <strong><%= food.name %> - <b>$</b><%= food.price/100.00 %></strong></br>
       <p><%= food.description %></p></br>
       <form action="foods/<%= food.id %>/edit">
         <input type="submit" value="Edit">

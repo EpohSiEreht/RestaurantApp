@@ -51,6 +51,8 @@ nav ul li {
 }
 
 /* sub navigation */
+
+
 nav ul li ul {
   background-color: rgba(10,10,10,0.8);
   position: absolute;
@@ -60,11 +62,16 @@ nav ul li ul {
   z-index: 5;
 }
 
+nav ul li ul li:hover {
+  background-color: #91CF42;
+}
+
 nav ul li ul li {
   display: block;
   font-size: 50px;
   text-align: center;
   border-top: 2px solid white;
+  margin:0;
 }
 
 a {
@@ -74,4 +81,13 @@ a {
 
 .sub-menu {
   display: none;
+}
+
+/* CURRENCY ICON */
+
+.currency {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 10%;
 }

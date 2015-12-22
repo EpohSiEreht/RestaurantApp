@@ -69,3 +69,28 @@ h3 {
   transform: scale(2, 2);
   margin-left: 60%;
 }
+
+// INDEX USER PAGE
+
+.employee-name {
+  list-style-type: none;
+  font-size: 30px;
+}
+
+// EDIT USER PAGE
+
+.edit-user {
+  position: relative;
+  text-align: center;
+  top: 12%;
+  width: 100%;
+  font-size: 50px;
+}
+
+.edit-user input {
+  display:block;
+  width:100%;
+  height:120px;
+  font-size: 60px;
+  border-radius: 25px;
+}

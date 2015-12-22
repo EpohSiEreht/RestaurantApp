@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// INDEX
+#lines {
+  display:inline-block;
+}
 
 // Create Order Page
 .create-order {
@@ -50,9 +54,11 @@ h5 {
 }
 .receipt-form {
   position: relative;
+  display: inline-block;
   top: 8%;
   width: 100%;
   font-size: 45px;
+  margin-top: 60px;
 }
 
 .receipt-form input {

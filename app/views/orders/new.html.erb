@@ -5,6 +5,8 @@
 <%= form_for @order do |f| %>
   <%= f.collection_select(:table_id, Table.all, :id, :name) %>
   <%= f.collection_select(:food_id, Food.all, :id, :name) %>
+  <%= f.label "Note" %>
+  <%= f.text_field :note %>
   <%= f.submit "Submit to Cart"%>
 <% end %>
 </div>

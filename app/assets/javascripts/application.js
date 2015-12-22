@@ -29,4 +29,8 @@ $(document).ready(function() {
             })
         }
     );
+    $('.currency').click(function(){
+      $('<i>€ </i>').replaceAll("b");
+    });
 });
+

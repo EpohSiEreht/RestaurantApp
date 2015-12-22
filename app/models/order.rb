@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
 
   scope :by_time, -> { order('created_at DESC') }
 
+
   def status
     if self.is_done == 0
       "Completed!"

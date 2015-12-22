@@ -1,0 +1,22 @@
+<% if current_user.level == 0 %>
+<h3 style="font-size:120px;"> Your Employees </h3>
+
+<div class="employee" style="position:relative;top:10%;text-align:center;">
+<ol>
+  <% @users.each do |user| %>
+  <li class="employee-name">
+    <div class="row">
+      <div class="six columns">
+        <%= user.email %>
+      </div>
+      <div class="six columns">
+        <%= button_to "Delete", user_path(user), method: :delete, :style => "font-size:30px;height:50px;width:70%;margin:0;"%>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ol>
+</div>
+<% else %>
+  <h2> You don't have administrative access. </h2>
+<% end %>

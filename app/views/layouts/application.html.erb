@@ -14,9 +14,30 @@
     <ul>
     	<li class="dropdown"><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" id="menu-icon"></a>
     		<ul class="sub-menu">
-    			<li><a id="home" href="/">Home</a></li>
-    			<li><a id="food" href="/foods">Food Menu</a></li>
-          <li><a id="profile" href="/profile">Profile</a></li>
+    			<a id="home" href="/">
+          <li>Home</li>
+          </a>
+    			<a id="food" href="/foods">
+          <li>Food Menu</li>
+          </a>
+          <a id="profile" href="/profile">
+          <li>
+            <% if current_user.nil? %>
+            <%=  %>
+            <% else %>
+            <%= current_user.name %>'s Profile
+            <% end %>
+          </li>
+          </a>
+          <a id="profile" href="/users/<%=current_user.id%>/orders">
+          <li>
+            <% if current_user.nil? %>
+            <%=  %>
+            <% elsif current_user.level == 0 || current_user.level == 0 %>
+            Your Orders
+            <% end %>
+          </li>
+          </a>
     		</ul>
     	</li>
       <li class="title" style="float:right;font-size:50px;padding:0 20px;">
@@ -26,6 +47,9 @@
   </nav>
 <div class="container">
   <%= yield %>
+</div>
+<div class="buttony">
+  <img class="currency" src="https://cdn3.iconfinder.com/data/icons/currency-5/154/currency-world-england-dollar-euro-exchange-coin-512.png"/>
 </div>
 </body>
 </html>
