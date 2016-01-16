@@ -24,7 +24,9 @@
           <li>
             <% if current_user.nil? %>
             <%=  %>
-            <% else %>
+            <% elsif current_user.level == 0 %>
+            Admin's Profile
+            <% elsif current_user.level == 1 %>
             <%= current_user.name %>'s Profile
             <% end %>
           </li>
