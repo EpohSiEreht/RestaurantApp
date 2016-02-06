@@ -2,10 +2,10 @@
 <h1 class="admin-title"> Let's Begin</h1>
 <div class="abilities">
 <form action="users/<%=current_user.id%>/orders/new">
-  <input type="submit" value="Create an Order">
+  <input type="submit" value="Create Order">
 </form>
 <form action="users/<%=current_user.id%>/orders">
-  <input type="submit" value="See your Orders">
+  <input type="submit" value="See Orders">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 </div>

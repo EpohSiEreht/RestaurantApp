@@ -3,22 +3,22 @@
 <div class="abilities">
 
 <form action="/users/new" class="ability">
-  <input type="submit" value="Create a User" class="input-button">
+  <input type="submit" value="Create User" class="input-button">
 </form>
 <form action="users/<%=current_user.id%>/edit" class="ability">
   <input type="submit" value="Edit User" class="input-button">
 </form>
 <form action="/tables/new" class="ability">
-  <input type="submit" value="Create a Table" class="input-button">
+  <input type="submit" value="Create Table" class="input-button">
 </form>
 <form action="/foods/new" class="ability">
-  <input type="submit" value="Create a Food Item">
+  <input type="submit" value="Create Food Item">
 </form>
 <form action="users/<%=current_user.id%>/orders/new" class="ability">
-  <input type="submit" value="Create an Order" class="input-button">
+  <input type="submit" value="Create Order" class="input-button">
 </form>
 <form action="users/<%=current_user.id%>/orders" class="ability">
-  <input type="submit" value="See all Orders" class="input-button">
+  <input type="submit" value="See Orders" class="input-button">
 </form>
 <%= button_to "Log-Out", sessions_path, method: :delete %>
 
